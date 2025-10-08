@@ -31,14 +31,35 @@ class ExpenseType(Enum):
     OTHER = 24
 
 @dataclass
+class EarningType(Enum):
+    BALANCER = 0,
+    RELATIVES = 1,
+    WON = 2,
+    WORK = 3,
+    FAVOURORCOMMISSION = 4,
+    FOUND = 5,
+    SALES = 6,
+    COINSJAR = 7,
+    OTHER = 8
+
+@dataclass
 class Expense:
     amount: float
-    day: datetime.datetime
+    day: datetime.date
     expenseType: ExpenseType
 
-    def __init__(self,amount,day,expenseTime):
+    def __init__(self,amount,day,expenseType):
         self.amount = amount
         self.day = day
-        self.expenseType = expenseTime
+        self.expenseType = expenseType
 
+@dataclass
+class Earning:
+    amount: float
+    day: datetime.date
+    earningType: EarningType
 
+    def __init__(self,amount,day,earningType):
+        self.amount = amount
+        self.day = day
+        self.expenseType = earningType
