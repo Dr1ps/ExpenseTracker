@@ -33,7 +33,23 @@ class Manager:
             for s in raw
         ]
 
+    def encapsule(self,data):
+        toPrint  = "-------------------------------------------------------------"
+        toPrint = toPrint + "\n" + data
+        return toPrint
+
+    def encapsuleAndPrint(self,data):
+        toPrint  = "-------------------------------------------------------------"
+        toPrint = toPrint + "\n" + data
+        print(toPrint)
+
     def menu(self):
-        a: str
-        a = ("------------------------------------------"
-             "[1: ")
+        menu: str
+        menu = "HOME MENU\n[0:View logs] [1:Declare an expense] [2:Declare an earning]"
+        self.encapsuleAndPrint(menu)
+
+    def logsMenu(self,data):
+        logsMenu: str
+        logsMenu = ("LOGS MENU\n\n"
+                    "What would you like to visualize?\n"
+                    "[0:Expenses] [1:Earnings] [2:Both]")
