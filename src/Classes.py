@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 from dataclasses import dataclass
 from enum import Enum
 
@@ -63,3 +63,9 @@ class Earning:
         self.amount = amount
         self.day = day
         self.expenseType = earningType
+
+@dataclass
+class LogsFilter(Enum):
+    EXPENSES = 0,
+    EARNINGS = 1,
+    BOTH = 2
