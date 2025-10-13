@@ -113,6 +113,7 @@ class Manager:
         self.printMenu("time")
         check = True
         while check:
+            self.printMenu("time")
             action = input()
             match action:
                 case "0":
@@ -129,9 +130,9 @@ class Manager:
                     print("Invalid request")
 
     def launchLogs(self):
-        self.printMenu("logs")
         check = True
         while check:
+            self.printMenu("logs")
             action = input()
             match action:
                 case "0":
@@ -149,9 +150,9 @@ class Manager:
                     print("Invalid request")
 
     def launchHome(self):
-        self.printMenu("home")
         check = True
         while check:
+            self.printMenu("home")
             action = input()
             match action:
                 case "0":
@@ -165,34 +166,4 @@ class Manager:
                 case _:
                     print("Invalid request")
         print(self.encapsule("Closing..."))
-
-
-
-    def launchProgram(self):
-        print("WELCOME TO THE EXPENSES / EARNINGS TRACKER")
-        self.printMenu("home")
-
-        action = input()
-        check = True
-        while check:
-            if action.__eq__("0"):
-                self.printMenu("logs")
-                checkLogs = True
-                while checkLogs:
-                    action = input()
-                    match action:
-                        case "0":
-                            self.logsFilter = LogsFilter.EXPENSES
-                            checkLogs = False
-                        case "1":
-                            self.logsFilter = LogsFilter.EARNINGS
-                            checkLogs = False
-                        case "2":
-                            self.logsFilter = LogsFilter.BOTH
-                            checkLogs = False
-                        case "3":
-                            checkLogs = False
-                            check
-                        case _:
-                            print("Invalid request")
 
